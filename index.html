@@ -1,18 +1,48 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="fa">
 <head>
-	<title>Redirect Example</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Apex VPN</title>
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	
+	<!-- Vazir font -->
+	<link href="https://cdn.rawgit.com/rastikerdar/vazir-font/v33.0.1/dist/font-face.css" rel="stylesheet" type="text/css">
+	
+	<style>
+		body {
+			font-family: 'Vazir', sans-serif;
+			text-align: center;
+			padding-top: 50px;
+		}
+	</style>
 </head>
 <body>
 
-	<h1>Welcome to my page!</h1>
+	<div class="container">
+		<h1>به Apex VPN خوش آمدید.</h1>
+		<p> شما به زودی به سایت اصلی هدایت خواهید شد.</p>
+		<p><span id="counter">0</span> ثانیه</p>
+	</div>
 
-	<p>You will be redirected to another page on the same domain in 5 seconds...</p>
-
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	
 	<script>
-		setTimeout(function() {
-			window.location.href = "http://49.13.29.51:3333/";
-		}, 5000);
+		var count = 0;
+		setInterval(function() {
+			count++;
+			$("#counter").html(count);
+			if (count == 10) {
+				window.location = "http://49.13.29.51:3333/";
+			}
+		}, 1000);
 	</script>
 
 </body>
