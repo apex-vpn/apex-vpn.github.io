@@ -45,10 +45,14 @@
 	<script>
 		var count = 5;
 		setInterval(function() {
-			count--;
-			$("#counter").html(count);
-			if (count == 0) {
+			if (count > 5) {
+				count--;
+				$("#counter").html(count);
+			}
+			else if (count == 0) {
 				window.location = "http://49.13.76.181:3333/";
+			}
+			else {
 			}
 		}, 1000);
 	</script>
